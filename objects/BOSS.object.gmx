@@ -57,6 +57,30 @@ time = 0;
         </arguments>
       </action>
     </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>current_word = scr_getWord();
+show_debug_message("New word!");
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="2" enumb="0">
       <action>
         <libid>1</libid>
@@ -172,6 +196,10 @@ else
 
 //Image angle
 image_angle -= (hspd+vspd)*2;
+
+//Keep inside!
+x = clamp(x,0,room_width);
+y = clamp(y,0,room_height);
 </string>
           </argument>
         </arguments>

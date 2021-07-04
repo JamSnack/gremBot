@@ -82,9 +82,14 @@ ground_point = room_height-16;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if ceil(y+vspeed) &gt;= ground_point &amp;&amp; vspeed &gt; 0
+            <string>if y+vspeed &gt;= ground_point &amp;&amp; vspeed &gt; 0
 {
     vspeed = -vspeed;
+}
+
+if x+hspeed &lt;= 4 || x+hspeed &gt;= room_width-4
+{
+    hspeed = -hspeed;
 }
 </string>
           </argument>

@@ -221,7 +221,7 @@ wander_direction = choose(1,-1);
 
 //Redirect back to the middle.
 var final_position = x+wander_distance*wander_direction;
-var border = 16*6;
+var border = 144;
 
 if final_position &lt;= border
 {
@@ -380,17 +380,19 @@ y = clamp(y,y,room_height);
 if wander_distance != 0 &amp;&amp; state == "WANDER" &amp;&amp; (x &lt;= 9 || x &gt;= room_width-9)
 {
     wanderDistance = 0;
+    speed = 0;
+    state = "IDLE";
 }
 
 //--------BOSS ATTACKS-----------
 if instance_exists(BOSS) &amp;&amp; text != ""
 {
     var boss = BOSS.id;
-    var current_word = boss.current_word;
-    show_debug_message(current_word + "|" + text);
-    show_debug_message(string(string_length(current_word)) + "|" + string(string_length(text)));
+    var word = boss.current_word;
+    //show_debug_message(word + "|" + text);
+    //show_debug_message(string(string_length(word)) + "|" + string(string_length(text)));
     
-    if text == current_word &amp;&amp; current_word != noone
+    if text == word &amp;&amp; word != noone &amp;&amp; word != "HIT"
     {
         show_debug_message("correct word");
     
@@ -401,7 +403,8 @@ if instance_exists(BOSS) &amp;&amp; text != ""
         
         with boss
         {
-            current_word = scr_getWord();
+            current_word = "HIT"
+            alarm[1] = room_speed/3;
             scr_hurt(id,6,3,_d);
         }
         
@@ -469,6 +472,7 @@ repeat(6)
     instance_create(x,y,efct_levelOrb);
 }
 
+scr_popMessage("LEVEL UP: "+string(level),global.fnt_Ui,2,c_lime,x,y);
 </string>
           </argument>
         </arguments>
@@ -515,6 +519,7 @@ repeat(6)
           <argument>
             <kind>1</kind>
             <string>draw_self();
+draw_set_color(c_white);
 
 //Draw the viewer's name!
 draw_text(x-(string_length(name)*5)/2,y+12,name);

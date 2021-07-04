@@ -73,7 +73,8 @@ if x &lt; 0-sprite_width then instance_destroy();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_text(x,y,str);
+            <string>draw_set_color(c_white);
+draw_text(x,y,str);
 </string>
           </argument>
         </arguments>

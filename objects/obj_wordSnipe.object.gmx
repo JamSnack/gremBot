@@ -84,7 +84,8 @@ time -= 1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_line_width(x,y,last_x,last_y,time*2);
+            <string>draw_set_color(choose(c_red,c_blue,c_green,c_orange,c_yellow,c_purple));
+draw_line_width(x,y,last_x,last_y,time*2);
 
 </string>
           </argument>

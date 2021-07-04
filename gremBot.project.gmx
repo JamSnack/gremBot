@@ -46,6 +46,7 @@
     <script>scripts\scr_hurt.gml</script>
     <script>scripts\scr_tip.gml</script>
     <script>scripts\scr_getWord.gml</script>
+    <script>scripts\scr_popMessage.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\twitchControl</object>
@@ -62,6 +63,7 @@
     <object>objects\efct_uiTip</object>
     <object>objects\obj_terrance</object>
     <object>objects\obj_wordSnipe</object>
+    <object>objects\efct_popMessage</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>

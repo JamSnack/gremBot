@@ -8,6 +8,7 @@ if instance_exists(instance)
 {
     //---Damage calculation and death-----
     instance.hp -= dmg;
+    scr_popMessage(string(dmg),global.fnt_Ui,2,c_red,x,y);
     
     //death
     if instance.hp <= 0 then with instance { instance_destroy(); }

@@ -78,6 +78,7 @@ repeat(irandom(4+1))
           <argument>
             <kind>1</kind>
             <string>draw_self();
+draw_set_color(c_white);
 
 //Draw HP
 if hp &lt; maxHp
