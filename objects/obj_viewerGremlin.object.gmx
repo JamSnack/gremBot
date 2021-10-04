@@ -188,11 +188,17 @@ instance_destroy();
 text = "";
 text_say = "";
 
-var xp_amt = 5;
-
-xp += irandom(level)*irandom(4);
+var xp_amt = 5+irandom(level)*irandom(4);
 
 xp += xp_amt;
+
+scr_popMessage("+"+string(xp_amt),global.fnt_Ui,1,c_aqua,x,y);
+
+//heal the gremlin
+if hp &lt; maxHp
+{
+    hp = approach(hp,maxHp,ceil(maxHp/50));
+}
 </string>
           </argument>
         </arguments>

@@ -50,7 +50,7 @@ xp_value = 1;
           <argument>
             <kind>1</kind>
             <string>///Drop XP!
-repeat(irandom(4+1))
+repeat(irandom(4)+1)
 {
     var i = instance_create(x,y,obj_xp);
     i.value = xp_value;

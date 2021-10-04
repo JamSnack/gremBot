@@ -56,6 +56,7 @@ wave = 0;
 wave_time = 0;
 wave_time_max = 100;
 time = 0;
+boss_enabled = true; //Whether or not wave bosses can spawn.
 </string>
           </argument>
         </arguments>
@@ -91,7 +92,7 @@ if tip_time &gt; tip_time_max &amp;&amp; irandom(3) == 2 &amp;&amp; !instance_ex
 }
 
 //Spawn a wave!
-if wave_time &gt;= wave_time_max &amp;&amp; !instance_exists(efct_uiTip)
+if wave_time &gt;= wave_time_max &amp;&amp; !instance_exists(efct_uiTip) &amp;&amp; instance_exists(obj_viewerGremlin)
 {
     wave += 1;
     scr_tip("Wave "+string(wave));
@@ -119,7 +120,7 @@ if wave_time &gt;= wave_time_max &amp;&amp; !instance_exists(efct_uiTip)
     wave_time_max = (irandom_range(90,180));
     show_debug_message("Wave");
     
-    if instance_number(obj_viewerGremlin) &gt; 5
+    if boss_enabled = true &amp;&amp; instance_number(obj_viewerGremlin)+wave &gt; 5
     {
         instance_create(50,-16,obj_terrance);
     }

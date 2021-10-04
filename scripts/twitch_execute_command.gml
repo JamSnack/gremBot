@@ -86,17 +86,27 @@ else if string_pos("!stats",data)
         }
     }
 }
-else if string_pos("!wave",data)
+
+
+if name == "jamsnack_"
 {
-    if name == "jamsnack_"
+
+    if string_pos("!wave",data)
     {
-        //Check for gremlin
-        if instance_exists(obj_viewerGremlin)
+        wave_time = wave_time_max;
+    }
+    else if string_pos("!boss",data)
+    {
+        boss_enabled = !boss_enabled;
+        
+        if boss_enabled == true
         {
-            repeat(10)
-            {
-                instance_create(0,0,obj_enemy1);
-            }
+            twitch_chat_say("Bosses Enabled.");
+        }
+        else if boss_enabled == false
+        {
+            twitch_chat_say("Bosses Disabled.");
         }
     }
+    
 }

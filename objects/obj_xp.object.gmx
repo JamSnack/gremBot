@@ -96,7 +96,7 @@ time_max = 20;
                 xp += _v;
             }
             
-            scr_popMessage("+"+string(value),global.fnt_Ui,2,c_aqua,x,y);
+            scr_popMessage("+"+string(value),global.fnt_Ui,1,c_aqua,x,y);
             instance_destroy();
         }
     }

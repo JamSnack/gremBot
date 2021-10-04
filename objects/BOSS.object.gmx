@@ -38,7 +38,7 @@ accel_rate = 0.2;
 target = instance_find(obj_viewerGremlin,irandom(instance_number(obj_viewerGremlin)-1));
 
 damage = 50;
-xp_value = 500;
+xp_value = 250;
 
 state = "ATTACK";
 
@@ -173,6 +173,9 @@ if instance_exists(target)
         }
         break;
     }
+    
+    //Stay inside during combat!
+    x = clamp(x,0,room_width);
 }
 else
 {
@@ -196,10 +199,6 @@ else
 
 //Image angle
 image_angle -= (hspd+vspd)*2;
-
-//Keep inside!
-x = clamp(x,0,room_width);
-y = clamp(y,0,room_height);
 </string>
           </argument>
         </arguments>
